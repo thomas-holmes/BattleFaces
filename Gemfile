@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Zurb Foundation
 gem 'foundation-rails'
 
+# Use Ember!
+gem 'ember-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
