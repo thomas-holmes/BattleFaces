@@ -1,11 +1,15 @@
 BattleFaces::Application.routes.draw do
+  namespace :api do
+    resources :battle_faces
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'application#index'
+  root "ember#start"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
