@@ -1,4 +1,7 @@
 BattleFaces::Application.routes.draw do
+
+  get "ember/start"
+  root "ember#start"
   namespace :api do
     resources :battle_faces
   end
@@ -8,8 +11,6 @@ BattleFaces::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
-  root "ember#start"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

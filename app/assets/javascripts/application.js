@@ -12,7 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars
+//= require ember
+//= require ember-data
 //= require foundation
+//= require_self
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+window.BattleFaces = Ember.Application.create();

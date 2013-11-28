@@ -1,0 +1,11 @@
+<h1>Battle Faces</h1>
+
+<ul>
+  {{#each controller}}
+    <li>{{#linkTo "battle_face" this}}{{name}}{{/linkTo}}</li>
+  {{else}}
+    <li>There are no Battle Faces</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
