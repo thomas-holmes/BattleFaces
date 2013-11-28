@@ -10,5 +10,8 @@ puts "Seeding..."
 BattleFace.create(
   name: "Fork"
 )
+BattleFace.create(
+  name: "Pinata"
+)
 
 puts "Complete."
