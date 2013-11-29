@@ -3,7 +3,5 @@ DS.RESTAdapter.reopen({
 });
 
 BattleFaces.Store = DS.Store.extend({
-  revision: 12,
-  //adapter: '_ams'
   adapter: DS.RESTAdapter.create()
 });

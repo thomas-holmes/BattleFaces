@@ -10,26 +10,23 @@ AuthManager = Ember.Object.extend({
     }
   },
 
-
   isAuthenticated: function() {
-    return !Ember.isEmpty(this.get('apiKey.accessToken'))
+    return !Ember.isEmpty(this.get('apiKey.access_token'))
             && !Ember.isEmpty(this.get('apiKey.master_face'));
   },
 
   authenticate: function(accessToken, masterFaceId) {
-    debugger
     $.ajaxSetup({
       headers: {'Authorization': 'Bearer ' + accessToken }
     });
-    var master_face = MasterFace.find(master_face_id);
+    var master_face = MasterFace.find(masterFaceId);
     this.set('apiKey', BattleFaces.ApiKey.create({
-      accessToken: accessToken,
+      access_token: accessToken, // Tutorial had this as accessToken, doesn't match the model
       master_face: master_face
     }));
   },
 
   reset: function() {
-    debugger
     BattleFaces.__container__.lookup('route:application').transitionTo('sessions.new');
     Ember.run.sync();
     Ember.run.next(this, function() {
@@ -41,19 +38,17 @@ AuthManager = Ember.Object.extend({
   },
 
   apiKeyObserver: function() {
-    debugger
     if (Ember.isEmpty(this.get('apiKey'))) {
       $.removeCookie('access_token');
       $.removeCookie('auth_master_face');
     } else {
-      $.cookie('access_token', this.get('apiKey.accessToken'));
+      $.cookie('access_token', this.get('apiKey.access_token'));
       $.cookie('auth_master_face', this.get('apiKey.master_face.id'));
     }
   }.observes('apiKey')
 });
 
 DS.rejectionHandler = function(reason) {
-  debugger
   if (reason.status === 401) {
     App.AuthManager.reset();
   }

@@ -10,8 +10,13 @@
       <ul class="right">
         <li>{{#linkTo "battle_faces"}}Battle Faces!{{/linkTo}}</li>
         <li>{{#linkTo "top_secret"}}Top Secret{{/linkTo}}</li>
-        <li>{{#linkTo "master_faces.new"}}Register{{/linkTo}}</li>
-        <li>{{#linkTo "sessions.new"}}Login{{/linkTo}}</li>
+        {{#if isAuthenticated}}
+          <li><a href="#">{{currentMasterFace.email}}</a></li>
+          <li><a href="#" {{action 'logout'}}>Logout</a></li>
+        {{else}}
+          <li>{{#linkTo "master_faces.new"}}Register{{/linkTo}}</li>
+          <li>{{#linkTo "sessions.new"}}Login{{/linkTo}}</li>
+        {{/if}}
       </ul>
     </section>
   </nav>
