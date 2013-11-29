@@ -1,0 +1,2 @@
+BattleFaces.MasterFaceRoute = AuthenticatedRoute.extend({
+});
