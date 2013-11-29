@@ -1,22 +1,30 @@
 <h2>Register, Master Face</h1>
 
 <form {{action "createMasterFace" on="submit"}}>
-  <div>
-    <label>Name</label>
+  <div {{bindAttr class=":controls model.errors.name:error"}}>
+    <label>Full Name</label>
     {{input type="text" value=name placeholder="Name"}}
+    <small class="below">{{model.errors.name}}</small>
   </div>
-  <div>
+
+  <div {{bindAttr class=":controls model.errors.email:error"}}>
     <label>Email Address</label>
     {{input type="email" value=email placeholder="Email Address"}}
+    <small class="below">{{model.errors.email}}</small>
   </div>
-  <div>
+
+  <div {{bindAttr class=":controls model.errors.password:error"}}>
     <label>Password</label>
     {{input type="password" value=password placeholder="Password"}}
+    <small class="below">{{model.errors.password}}</small>
   </div>
-  <div>
+
+  <div {{bindAttr class=":controls model.errors.password_confirmation:error"}}>
     <label>Confirm Password</label>
     {{input type="password" value=password_confirmation placeholder="Confirm Password"}}
+    <small class="below">{{model.errors.password_confirmation}}</small>
   </div>
+
   <br>
   <button type="submit">Submit</button>
 </form>

@@ -2,6 +2,7 @@
 
 BattleFaces.MasterFacesNewRoute = Ember.Route.extend({
   setupController: function(controller, model) {
-    this.controller.set('model', MasterFace.createRecord());
+    var rec = MasterFace.createRecord();
+    this.controller.set('model', rec);
   }
 });
