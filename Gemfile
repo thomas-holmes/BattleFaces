@@ -21,6 +21,9 @@ gem 'ember-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# Get jquery.cookie
+gem 'jquery-cookie-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
