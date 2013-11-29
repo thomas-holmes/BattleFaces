@@ -7,6 +7,7 @@ BattleFaces::Application.routes.draw do
   namespace :api do
     resources :battle_faces
     resources :master_faces
+    post 'session' => 'session#create'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

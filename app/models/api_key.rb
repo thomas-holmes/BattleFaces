@@ -7,8 +7,7 @@ class ApiKey < ActiveRecord::Base
   scope :api,     -> { where(scope: 'api') }
   scope :active,  -> { where("expired_at >= ?", Time.now) }
 
-
-  private
+private
   def set_expiry_date
     self.expired_at = if self.scope == 'session'
                         4.hours.from_now
