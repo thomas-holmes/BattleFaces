@@ -1,9 +1,12 @@
 BattleFaces::Application.routes.draw do
+  resources :api_keys
 
   get "ember/start"
   root "ember#start"
+
   namespace :api do
     resources :battle_faces
+    resources :master_faces
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
