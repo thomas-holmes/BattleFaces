@@ -1,5 +1,6 @@
 class Api::MasterFacesController < ApplicationController
   respond_to :json
+  skip_before_action :ensure_authenticated_master_face, only: [:create]
 
   def index
     respond_with MasterFace.all

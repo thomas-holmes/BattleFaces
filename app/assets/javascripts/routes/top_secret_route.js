@@ -1,5 +1,5 @@
-// For more information see: http://emberjs.com/guides/routing/
-
-BattleFaces.TopSecretRoute = Ember.Route.extend({
-
+BattleFaces.TopSecretRoute = AuthenticatedRoute.extend({
+  model: function() {
+    return MasterFace.find();
+  }
 });

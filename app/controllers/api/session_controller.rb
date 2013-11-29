@@ -1,4 +1,5 @@
 class Api::SessionController < ApplicationController
+  skip_before_action :ensure_authenticated_master_face, only: [:create]
   def create
     master_face = MasterFace.where("email = ?", params[:email]).first
     if master_face && master_face.authenticate(params[:password])

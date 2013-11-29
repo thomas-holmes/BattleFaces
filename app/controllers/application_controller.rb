@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
   #protect_from_forgery with: :null_session
 
+  before_action :ensure_authenticated_master_face
+
   def ensure_authenticated_master_face
     head :unauthorized  unless current_master_face
   end
@@ -11,7 +13,7 @@ class ApplicationController < ActionController::Base
   def current_master_face
     api_key = ApiKey.active.where(access_token: token).first
     if api_key
-      release api_key.master_face
+      return api_key.master_face
     else
       return nil
     end
