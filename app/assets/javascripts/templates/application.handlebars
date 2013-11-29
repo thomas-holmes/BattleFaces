@@ -1,16 +1,25 @@
 <header id="header">
-  <h2>{{#linkTo "index"}}Home{{/linkTo}}</h2>
-
-  <nav>
-    <ul>
-      <li>{{#linkTo "battle_faces"}}Battle Faces!{{/linkTo}}</li>
-      <li>{{#linkTo "top_secret"}}Top Secret{{/linkTo}}</li>
-      <li>{{#linkTo "master_faces.new"}}Register{{/linkTo}}</li>
-      <li>{{#linkTo "sessions.new"}}Login{{/linkTo}}</li>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">Battle Faces</a></h1>
+      </li>
     </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <li>{{#linkTo "battle_faces"}}Battle Faces!{{/linkTo}}</li>
+        <li>{{#linkTo "top_secret"}}Top Secret{{/linkTo}}</li>
+        <li>{{#linkTo "master_faces.new"}}Register{{/linkTo}}</li>
+        <li>{{#linkTo "sessions.new"}}Login{{/linkTo}}</li>
+      </ul>
+    </section>
   </nav>
 </header>
 
-<div id="content">
-  {{outlet}}
-</div>
+<body>
+
+  <div id="content">
+    {{outlet}}
+  </div>
+</body>
