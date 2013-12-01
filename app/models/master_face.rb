@@ -5,6 +5,7 @@ class MasterFace < ActiveRecord::Base
   has_secure_password
 
   has_many :api_keys
+  has_many :battle_faces
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128231151) do
+ActiveRecord::Schema.define(version: 20131130183636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(version: 20131128231151) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "master_face_id"
   end
+
+  add_index "battle_faces", ["master_face_id"], name: "index_battle_faces_on_master_face_id", using: :btree
 
   create_table "master_faces", force: true do |t|
     t.string   "name"

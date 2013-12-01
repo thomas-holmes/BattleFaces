@@ -1,1 +1,8 @@
-<h2>{{model.name}}</h2>
+<h2>{{name}}</h2>
+
+<h3>Battle Faces</h3>
+<ul>
+  {{#each battle_face in battle_faces}}
+  {{render "battle_face" battle_face}}
+  {{/each}}
+</ul>
