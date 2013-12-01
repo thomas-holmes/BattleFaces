@@ -5,7 +5,7 @@ BattleFaces.BattleFacesNewRoute = Ember.Route.extend({
       var router = this.get('router');
 
       $.post('/api/battle_faces', { id: battleFace.id }, function(results) {
-        self.store.push('battle_face', results.battle_face);
+        BattleFaces.BattleFace.createRecord(results.battle_face);
         router.transitionTo('battle_faces');
       });
     }

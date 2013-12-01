@@ -1,12 +1,12 @@
 <ul>
-  {{#each battle_face in model.battle_faces}}
-    <li>{{battle_face.name}}</li>
+  {{#each model.battle_faces}}
+    <li>{{name}}</li>
     <ul>
-      <li>{{battle_face.attack}}</li>
-      <li>{{battle_face.defense}}</li>
-      <li>{{battle_face.speed}}</li>
+      <li>{{attack}}</li>
+      <li>{{defense}}</li>
+      <li>{{speed}}</li>
     </ul>
-    <form {{action "selectNewBattleFace" battle_face on="submit"}}>
+    <form {{action "selectNewBattleFace" this on="submit"}}>
       <button class="button tiny" type="submit">Choose {{name}}</button>
     </form>
   {{/each}}

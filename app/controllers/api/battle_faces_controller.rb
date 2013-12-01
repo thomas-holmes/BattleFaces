@@ -32,7 +32,7 @@ class Api::BattleFacesController < ApplicationController
   end
 
   private
-  @@names = %w( Taco Fork Ducklings Piano Futon Pinecone Tiara )
+  @@names = %w( Taco Fork Duckling Piano Futon Pinecone Tiara )
   def create_random_battle_face
     current_master_face.battle_faces.create(
       name: @@names.sample,

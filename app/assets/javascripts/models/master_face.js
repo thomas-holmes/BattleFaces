@@ -8,7 +8,3 @@ BattleFaces.MasterFace = DS.Model.extend({
   
   errors: {}
 });
-
-//DS.RESTAdapter.map('MasterFace', {
-//  battle_faces: { embedded: 'always' }
-//});
