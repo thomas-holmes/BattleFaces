@@ -35,6 +35,8 @@ AuthManager = Ember.Object.extend({
         headers: { 'Authorization': 'Bearer none' }
       });
     });
+    BattleFaces.reset();
+    window.location="/"; // user logged out, dump all state by redirecting to home
   },
 
   apiKeyObserver: function() {
