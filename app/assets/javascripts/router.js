@@ -1,5 +1,6 @@
 BattleFaces.Router.map(function() {
   this.resource("battle_faces", function() {
+    this.route('new');
     this.resource("battle_face", { path: ":battle_face_id" });
   });
   this.resource('sessions', function() {
