@@ -13,3 +13,37 @@
 
  *= require_tree .
  */
+ul {
+  list-style-type: none;
+  display: inline;
+}
+
+.active {
+  .small-tile {
+    border-style: solid;
+    border-width: 6px;
+    border-color: #2accac;
+
+    padding: 4px;
+  }
+}
+
+.small-tile {
+  &.active {
+    border-style: solid;
+    border-width: 6px;
+    border-color: #2accac;
+  }
+  cursor: pointer;
+  display: inline-block;
+  background-color: #1abc9c;
+  height: 125px;
+  width: 125px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.tile-text {
+  color: #ecf0f1;
+  font-size: 32px;
+}

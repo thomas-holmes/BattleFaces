@@ -37,6 +37,7 @@ class Api::BattleFacesController < ApplicationController
     current_master_face.battle_faces.create(
       name: @@names.sample,
       status: :pending,
+      level: Random.rand(1..3),
       attack: Random.rand(1..100),
       defense: Random.rand(1..100),
       speed: Random.rand(1..100)

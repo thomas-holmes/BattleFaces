@@ -2,9 +2,7 @@
 
 <ul>
   {{#each controller}}
-    <li>{{#linkTo "battle_face" this}}{{name}}{{/linkTo}}</li>
-  {{else}}
-    <li>There are no Battle Faces</li>
+  <li>{{render "battle_faces.tile" this}}</li>
   {{/each}}
 </ul>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201015447) do
+ActiveRecord::Schema.define(version: 20131201192357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20131201015447) do
     t.integer  "defense"
     t.integer  "speed"
     t.string   "status"
+    t.integer  "level"
   end
 
   add_index "battle_faces", ["master_face_id"], name: "index_battle_faces_on_master_face_id", using: :btree
